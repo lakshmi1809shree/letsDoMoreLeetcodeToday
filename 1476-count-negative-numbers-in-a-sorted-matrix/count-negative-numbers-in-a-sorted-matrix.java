@@ -7,6 +7,7 @@ class Solution {
         // har rw wise , nikal kitna negtive num 
         // added 
         // return add
+        /*
         int n=grid.length; 
         int rowlength=grid[0].length;
         int sum=0;
@@ -20,5 +21,21 @@ class Solution {
         }
 
         return sum;
+        */
+        int rows=grid.length;
+        int cols=grid[0].length;
+        int row=0;
+        int col=grid[0].length-1;
+        int count=0;
+
+        while(row<rows && col>=0){
+            if(grid[row][col]>=0){
+                row++;
+            }else{
+                count+=rows-row;
+                col--;
+            }
+        }
+        return count;
     }
 }
